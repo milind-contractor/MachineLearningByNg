@@ -11,12 +11,12 @@ TrainLogisticReg <- function(X, y, Lambda){
   LogisticRec <- optim(par = initial_theta,
                        fn = CostFunction,
                        gr = GradFunction,
-                       #method = "BFGS",
+                       method = "BFGS",
                        X = X,
                        y = y,
                        Lambda = Lambda)
   
   
-  #print(paste("J", LogisticRec$value))
+  print(paste("J", LogisticRec$value))
   return(LogisticRec$par)
 }
