@@ -1,12 +1,11 @@
 library(ggplot2)
 
-source("TrainLogisticRegression.R")
-source("CostFunction.R")
-source("BoundaryPoints.R")
+source("./lib/TrainLogisticRegression.R")
+source("./Ex2/BoundaryPoints.R")
 
 # Build Logistic Regression Model.
 # Read Data from File provide as part of Ex2
-ex2data2 <- read.csv("ex2data2.txt", header = FALSE)
+ex2data2 <- read.csv("./Ex2/ex2data2.txt", header = FALSE)
 names(ex2data2) <- c("Microchip_Test_1", "Microchip_Test_2", "Test")
 
 X <- ex2data2[ , -3]
@@ -52,3 +51,4 @@ lambda100 <- TrainLogisticReg(as.matrix(X_poly), y, 100)
 lambda100_boundary <- boundary_fct(lambda100)
 plot + geom_contour(data = lambda100_boundary, aes(x = u, y = v, z = z), bins= 1) + 
   ggtitle("Lambda 100")
+

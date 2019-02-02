@@ -1,5 +1,5 @@
-source("../Ex2/GradFunction.R")
-source("../Ex2/CostFunction.R")
+source("./lib/GradFunction.R")
+source("./lib/CostFunction.R")
 
 TrainLogisticReg <- function(X, y, Lambda){
   
